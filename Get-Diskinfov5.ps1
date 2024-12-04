@@ -98,7 +98,7 @@ $sessions= New-CimSession -ComputerName $sublist -Credential $cred
 }
 
 
-$Hostname= @{label="Hostname";expression={$_.PSComputerName}}
+$Hostname= @{label="Hostname";expression={("$($_.PSComputerName)" -split "\.")[0]}}
 $dizinpath= @{label="Path";expression={"$($_.DeviceID)\"}}
 $dizinpath2= @{label="Path2";expression={"$($_.DeviceID)\"}}
 $TotalSize = @{label="TotalSize";expression={"$([math]::Round($_.Size/1GB, 1))GB"}}
