@@ -63,7 +63,7 @@ $UnresolvedServers = "$outputfolder\UnresolvedServers$(get-date -Format 'ddMMyyy
 $UnreachableServers = "$outputfolder\UnreachableServers$(get-date -Format 'ddMMyyyy-hhmm').txt" 
 $AccessibleServers= "$outputfolder\AccessibleServerList$(get-date -Format 'ddMMyyyy-hhmm').txt"
 if (-not (Get-Item $outputfolder -ErrorAction SilentlyContinue)) {New-Item $outputfolder -ItemType Directory | Out-Null}
-Remove-Item $outputfolder -Recurse -Force -Confirm:$false
+#Remove-Item $outputfolder -Recurse -Force -Confirm:$false
 
 Start-Transcript -Path "$Logfile"
 #endregion
